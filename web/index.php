@@ -5,7 +5,7 @@ $app = new Silex\Application();
 
 $app->register(new SilexAssetic\AsseticServiceProvider());
 
-$app['assetic.path_to_web'] = __DIR__ . '/assets';
+$app['assetic.path_to_web'] = __DIR__;
 $app['assetic.options'] = array(
     'debug' => true,
 );

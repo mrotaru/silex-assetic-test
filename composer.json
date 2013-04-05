@@ -1,6 +1,7 @@
 {
 	"require": {
 		"silex/silex": "1.0.*@dev",
+        "kriswallsmith/assetic": "1.1.*@dev",
 		"mheap/Silex-Assetic": "dev-master@dev"
 	}
 }
