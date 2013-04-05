@@ -11,7 +11,7 @@ $app['assetic.options'] = array(
 );
 $app['assetic.filter_manager'] = $app->share(
     $app->extend('assetic.filter_manager', function($fm, $app) {
-        $fm->set('cssmin', new Assetic\Filter\CssMinFilter());
+        $fm->set('cssf', new Assetic\Filter\CssRewriteFilter());
         return $fm;
     })
 );
@@ -20,7 +20,7 @@ $app['assetic.asset_manager'] = $app->share(
         $am->set('styles', new Assetic\Asset\AssetCache(
             new Assetic\Asset\GlobAsset(
                 __DIR__ . '/../assets/css/*.css',
-                array($fm->get('cssmin'))
+                array($app['assetic.filter_manager']->get('cssf'))
             ),
             new Assetic\Cache\FilesystemCache(__DIR__ . '/cache/assetic')
         ));
