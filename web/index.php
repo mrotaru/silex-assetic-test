@@ -11,7 +11,7 @@ $app['assetic.options'] = array(
 );
 $app['assetic.filter_manager'] = $app->share(
     $app->extend('assetic.filter_manager', function($fm, $app) {
-        $fm->set('cssf', new Assetic\Filter\CssRewriteFilter());
+        $fm->set('scssphp', new Assetic\Filter\ScssphpFilter());
         return $fm;
     })
 );
@@ -19,8 +19,8 @@ $app['assetic.asset_manager'] = $app->share(
     $app->extend('assetic.asset_manager', function($am, $app) {
         $am->set('styles', new Assetic\Asset\AssetCache(
             new Assetic\Asset\GlobAsset(
-                __DIR__ . '/../assets/css/*.css',
-                array($app['assetic.filter_manager']->get('cssf'))
+                __DIR__ . '/../assets/scss/*.scss',
+                array($app['assetic.filter_manager']->get('scssphp'))
             ),
             new Assetic\Cache\FilesystemCache(__DIR__ . '/cache/assetic')
         ));
