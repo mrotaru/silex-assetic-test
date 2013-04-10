@@ -2,7 +2,7 @@ Simple project to test Silex Assetic
 
 Based on the fat zip distribution of Silex, and using
 https://github.com/jlong/sass-twitter-bootstrap[a scss version of twitter bootstrap].
-`https://github.com/mrclay/minify[JSMinPlus] is used to minify bootstrap js files.
+https://github.com/mrclay/minify[`JSMinPlus`] is used to minify bootstrap js files.
 
 To install:
 ------
