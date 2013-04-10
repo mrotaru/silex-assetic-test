@@ -4,6 +4,7 @@
         "jlong/sass-twitter-bootstrap": "~2.3.1",
         "leafo/scssphp": "dev-master",
         "kriswallsmith/assetic": "1.1.*@dev",
+        "mrclay/minify": "dev-master",
 		"mheap/Silex-Assetic": "dev-master@dev"
 	}
 }

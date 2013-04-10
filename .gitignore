@@ -3,3 +3,4 @@ composer.lock
 web/cache/
 !web/cache/.gitkeep
 web/css/
+web/js/
