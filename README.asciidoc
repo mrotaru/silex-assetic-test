@@ -4,13 +4,13 @@ Based on the fat zip distribution of Silex, and using
 https://github.com/jlong/sass-twitter-bootstrap[a scss version of twitter bootstrap].
 https://github.com/mrclay/minify[`JSMinPlus`] is used to minify bootstrap js files.
 
-To install:
+.To install:
 ------
-`git clone git@github.com:mihai-rotaru/silex-assetic-test.git`
-`php composer.phar install`
+git clone git@github.com:mihai-rotaru/silex-assetic-test.git
+php composer.phar install
 ------
 
-To test, go to:
+.To test, go to:
 ------
-`localhost/silex-assetic-test/web/hello/test`
+localhost/silex-assetic-test/web/hello/test
 ------
