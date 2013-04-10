@@ -1,4 +1,13 @@
 Simple project to test Silex Assetic
 
-Uses link:https://github.com/jlong/sass-twitter-bootstrap [a scss version of twitter bootstrap].
-When +web/hello/test+ is accessed, assetic is used to generate +web/css/styles.css+.
+Based on the fat zip distribution of Silex, and using
+https://github.com/jlong/sass-twitter-bootstrap [a scss version of twitter bootstrap].
+
+To install:
+
+`git clone git@github.com:mihai-rotaru/silex-assetic-test.git`
+`php composer.phar install`
+
+To test, go to:
+
+`localhost/silex-assetic-test/web/hello/test`
