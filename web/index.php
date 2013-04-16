@@ -64,6 +64,7 @@ $app->get('/hello', function () use ($app) {
     $html = '<html><head>'
         . '<link rel="stylesheet" href="css/styles.css">'
         . '<script src="js/javascripts.js"></script>'
+        . '<script src="//use.edgefonts.net/esteban:n4.js"></script>'
         . '</head><body>'
         . '<p>Silex Assetic test</p>'
         . '</body></html>';
