@@ -48,6 +48,14 @@ $app['assetic.asset_manager'] = $app->share(
         );
         $am->get('javascripts')->setTargetPath('js/javascripts.js');
 
+        // Image assets
+        $am->set('background', new Assetic\Asset\AssetCache(
+            new Assetic\Asset\GlobAsset( __DIR__ . '/../assets/img/wavegrid.png'),
+            new Assetic\Cache\FilesystemCache( $app['assetic.path_to_cache'] )
+            )
+        );
+        $am->get('background')->setTargetPath('img/wavegrid.png');
+
         return $am;
     })
 );
