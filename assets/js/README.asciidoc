@@ -1,0 +1,3 @@
+Place your javascript files here. All `*.js` files in this folder will be
+automatically concatenated with twitter bootstrap javascripts into a single
+javascript file, which will be placed in `web/js`.

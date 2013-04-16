@@ -1,0 +1,3 @@
+Place your scss files here. All `*.scss` files in this folder will be
+automatically concatenated with twitter bootstrap scss files into
+`web/css/styles.css`.

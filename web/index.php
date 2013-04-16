@@ -27,7 +27,8 @@ $app['assetic.asset_manager'] = $app->share(
         // SCSS assets
         $am->set('styles', new Assetic\Asset\AssetCache(
             new Assetic\Asset\GlobAsset(
-                __DIR__ . '/../vendor/jlong/sass-twitter-bootstrap/lib/bootstrap.scss',
+                array( __DIR__ . '/../vendor/jlong/sass-twitter-bootstrap/lib/bootstrap.scss',
+                       __DIR__ . '/../assets/scss/*.scss' ), 
                 array($app['assetic.filter_manager']->get('scssphp'))
             ),
             new Assetic\Cache\FilesystemCache( $app['assetic.path_to_cache'] )
@@ -37,7 +38,8 @@ $app['assetic.asset_manager'] = $app->share(
         // JavaScript assets
         $am->set('javascripts', new Assetic\Asset\AssetCache(
             new Assetic\Asset\GlobAsset(
-                __DIR__ . '/../vendor/jlong/sass-twitter-bootstrap/js/*.js',
+                array( __DIR__ . '/../vendor/jlong/sass-twitter-bootstrap/js/*.js',
+                       __DIR__ . '/../assets/js/*.js' ), 
                 array( $app['assetic.filter_manager']->get('jsmin') )
                 ),
                 new Assetic\Cache\FilesystemCache( $app['assetic.path_to_cache'] )
