@@ -1,6 +1,6 @@
 vendor/
 composer.lock
-web/cache/
-!web/cache/.gitkeep
+cache/
+!*.asciidoc
 web/css/
 web/js/
