@@ -15,6 +15,7 @@ $app['assetic.options']         = array(
 $app['assetic.filter_manager'] = $app->share(
     $app->extend('assetic.filter_manager', function($fm, $app) {
         $fm->set('scssphp', new Assetic\Filter\ScssphpFilter());
+        $fm->get('scssphp')->addImportPath('../vendor/jlong/sass-twitter-bootstrap/lib');
         $fm->set('jsmin',   new Assetic\Filter\JSMinPlusFilter());
         return $fm;
     })
@@ -28,7 +29,7 @@ $app['assetic.asset_manager'] = $app->share(
         $am->set('styles', new Assetic\Asset\AssetCache(
             new Assetic\Asset\GlobAsset(
                 array( __DIR__ . '/../vendor/jlong/sass-twitter-bootstrap/lib/bootstrap.scss',
-                       __DIR__ . '/../assets/scss/*.scss' ), 
+                       __DIR__ . '/../assets/scss/styles.scss' ), 
                 array($app['assetic.filter_manager']->get('scssphp'))
             ),
             new Assetic\Cache\FilesystemCache( $app['assetic.path_to_cache'] )

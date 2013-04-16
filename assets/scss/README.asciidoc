@@ -1,3 +1,25 @@
-Place your scss files here. All `*.scss` files in this folder will be
-automatically concatenated with twitter bootstrap scss files into
-`web/css/styles.css`.
+Add custom styles to `styles.scss` - it also includes `bootstrap.scss` and
+`responsive.scss`.
+
+=== Customizing twitter bootstrap
+Bootstrap is included as a composer library - so, all scss files are in
+`vendor/jlong/sass-twitter-bootstrap/lib/`.  Since `vendor/jlong` is managed by
+composer, any edits to those files will be lost when the lib is updated. Some
+degree of customisation can be achieved by setting variables - they won't be
+overridden by values in bootstrap's default `_variables.scss` file, because all
+of them are declared as `default`. However, I found this approach not
+sufficient to get rid of the bootstrap smell; the goal was a customisation that
+doesn't feel like bootstrap at all.
+
+So, I arrived at a slightly different approach. I copied `Bootstrap.scss` and
+`responsive.scss` to the `assets` folder, and added the `lib` folder to scss
+include paths. The result is that I can customize any bootstrap scss file by
+copying it to `assets`. The modified version will be under VCS, and will
+override the default one - and if a modified version is not available, the
+corresponding file in `lib` will be included.
+
+This approach isn't perfect, of course. If `_buttons.scss` is updated upstream,
+I would have to manually merge those changes into my modified version in
+`assets`. However, considering 2.3.1 is the last release for the `2` major
+version, significant changes are unlikely. In addition, the version can be
+locked via `composer.json`.
